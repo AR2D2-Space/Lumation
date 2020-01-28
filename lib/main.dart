@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'loginLumnation.dart';
+import 'package:vistas_lumation/loginLumnation.dart';
+import 'listItemsLumation.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,13 +9,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: 'login-lumation',
+      routes: {
+        'login-lumation' : (BuildContext context) => LoginPage(),
+        'list-items-lumation': (BuildContext context) => ListItemPage()
+      },
       debugShowCheckedModeBanner: false,
       title: 'Test Lumation',
-      theme: ThemeData(
-        
+      theme: ThemeData(        
         primarySwatch: Colors.pink,
       ),
-      home: LoginPage()
     );
   }
 }
